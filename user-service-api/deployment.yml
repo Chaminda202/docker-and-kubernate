@@ -27,7 +27,7 @@ metadata:
 spec:
   selector:
     app: user-api
-  type: LoadBalancer
+  type: NodePort
   ports:
   - protocol: TCP
     port: 3000
