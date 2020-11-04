@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: spring-reddit-clone
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: spring-reddit-clone
-          image: chaminda202/spring-reddit-clone:1.0
+          image: dimuthu256/spring-reddit-clone:1.0
           ports:
             - containerPort: 8080
           env:
@@ -46,7 +46,7 @@ metadata:
 spec:
   selector:
     app: spring-reddit-clone
-    type: NodePort
+  type: NodePort
   ports:
     - protocol: TCP
       port: 8080

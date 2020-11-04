@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: spring-reddit-clone
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://mariadb:3306/test_db?createDatabaseIfNotExist=true
+    username: admin
+    password: admin
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+  #Mail configuration
+  mail:
+    host: smtp.mailtrap.io
+    port: 25
+    username: 
+    password: 
+    protocol: smtp
+
+jwt:
+  application:
+    secret: secret_keysecret_keysecret_keysecret_keysecret_keysecret_keysecret_keysecret_keysecret_key
+    token-prefix: Bearer
+    validity-period: 600 #in seconds
+    authorization-header: Authorization
