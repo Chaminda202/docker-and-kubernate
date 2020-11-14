@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  app:
+    container_name: angular-app-docker-compose
+    image: angular-app
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+    - "4200:4200"
+    command: >
+      bash -c "npm start"
+      

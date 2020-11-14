@@ -1,0 +1,47 @@
+<div class="login-section">
+  <div class="row justify-content-center">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header" style="text-align: center">
+          <h4>Register</h4>
+        </div>
+
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()" >
+            <div class="row form-group">
+              <div class="col-md-4">
+                <label for="username" class="col-form-label text-md-right">User Name</label>
+              </div>
+              <div class="col-md-6">
+                <input [formControlName]="'username'" type="text" id="username" class="form-control" name="username" required autofocus>
+                <span *ngIf="!username.valid && username.touched">Username can not be empty</span>
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-4">
+                <label for="password" class="col-form-label text-md-right">Password</label>
+              </div>
+              <div class="col-md-6">
+                <input [formControlName]="'password'" type="password" id="password" class="form-control" name="password" required autofocus>
+                <span *ngIf="!password.valid && password.touched">Password can not be empty</span>
+              </div>
+            </div>
+
+            <span class="col-md-6 offset-md-4">
+              <button type="submit" class="login">Login</button>
+              <span style="padding-left: 15px">New user? <a routerLink="/singup">Sign Up</a></span>
+              <span *ngIf="isError">Username or Password is invalid</span>
+              <div class="login-failed" [ngStyle]="{'background-color': 'green'}" *ngIf="registerSuccessMessage && registerSuccessMessage.length > 0">
+                <p class="register-success-text">{{registerSuccessMessage}}</p>
+              </div>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+

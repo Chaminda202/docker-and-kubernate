@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: spring-reddit-clone
-          image: dimuthu256/spring-reddit-clone:1.0
+          image: spring-reddit-clone:1.0
           ports:
             - containerPort: 8080
           env:
